@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  bot_media:
+    container_name: bot_media
+    image: python:3.10-slim
+    environment:
+      - TZ=Asia/Ho_Chi_Minh
+    working_dir: /bot_media
+    volumes:
+      - .:/bot_media
+
+    # command: ["/bin/bash", "-c", "pip install --no-cache-dir -r requirements.txt && python bot_media.py"]  
+    command: ["/bin/bash", "-c", "pip install --no-cache-dir -r requirements.txt && python main.py"]
